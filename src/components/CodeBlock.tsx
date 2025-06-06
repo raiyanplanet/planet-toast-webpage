@@ -22,7 +22,7 @@ const CodeBlock: React.FC<CodeBlockProps> = ({ code, language = "tsx" }) => {
   };
 
   return (
-    <div className="relative rounded-2xl overflow-hidden border border-stone-200 dark:border-stone-700">
+    <div className="relative rounded-2xl overflow-hidden border border-stone-200 dark:border-stone-700 text-wrap bg-stone-900">
       <div className="flex items-center justify-between px-4 py-2 bg-stone-100 dark:bg-stone-700 border-b border-stone-300 dark:border-stone-600">
         <span className="text-sm font-mono text-stone-600 dark:text-stone-300">
           {language}
@@ -43,6 +43,9 @@ const CodeBlock: React.FC<CodeBlockProps> = ({ code, language = "tsx" }) => {
           background: "transparent",
           fontSize: "0.875rem",
           fontFamily: "monospace",
+          whiteSpace: "pre-wrap", // Allow wrapping
+          wordBreak: "break-word", // Break long words if needed
+          overflowWrap: "break-word", // Extra safety for wrapping
         }}>
         {code}
       </SyntaxHighlighter>

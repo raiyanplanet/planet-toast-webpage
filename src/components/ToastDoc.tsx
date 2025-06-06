@@ -179,7 +179,7 @@ const ToastDemo: React.FC = () => {
                 <h1 className="text-2xl font-bold text-stone-800 dark:text-stone-100">
                   Planet Toast
                 </h1>
-                <p className="text-sm text-stone-600 dark:text-stone-400">
+                <p className="text-sm text-stone-600 dark:text-stone-400 max-md:hidden">
                   Beautiful toast notifications for React
                 </p>
               </div>
@@ -187,7 +187,7 @@ const ToastDemo: React.FC = () => {
             <div className="flex items-center gap-4">
               <button
                 onClick={() => setDarkMode(!darkMode)}
-                className="p-3 rounded-xl bg-stone-100 dark:bg-stone-800 hover:bg-stone-200 dark:hover:bg-stone-700 transition-colors border border-stone-200 dark:border-stone-600">
+                className="p-3 max-md:p-1.5 rounded-xl bg-stone-100 dark:bg-stone-800 hover:bg-stone-200 dark:hover:bg-stone-700 transition-colors border border-stone-200 dark:border-stone-600">
                 {darkMode ? (
                   <Sun size={20} className="text-amber-500" />
                 ) : (
@@ -197,7 +197,7 @@ const ToastDemo: React.FC = () => {
 
               <a
                 href="https://github.com/raiyanplanet/planet-toast"
-                className="flex items-center gap-2 px-6 py-3 bg-stone-800 dark:bg-stone-100 text-stone-100 dark:text-stone-800 rounded-xl hover:bg-stone-700 dark:hover:bg-stone-200 transition-colors font-medium">
+                className="flex items-center gap-2 px-6 py-3 max-md:px-3 max-md:py-1.5 bg-stone-800 dark:bg-stone-100 text-stone-100 dark:text-stone-800 rounded-xl hover:bg-stone-700 dark:hover:bg-stone-200 transition-colors font-medium">
                 <Github size={20} />
                 GitHub
               </a>
@@ -369,7 +369,7 @@ function MyComponent() {
                 Basic Methods
               </h3>
               <div className="grid gap-8">
-                <div className="bg-cream-50 dark:bg-stone-800 p-8 rounded-3xl border border-stone-200 dark:border-stone-700">
+                <div>
                   <h4 className="text-xl font-semibold text-stone-800 dark:text-stone-100 mb-4">
                     toast(message, options?)
                   </h4>
@@ -382,7 +382,7 @@ toast('Custom duration', { duration: 6000 });`}
                   />
                 </div>
 
-                <div className="bg-cream-50 dark:bg-stone-800 p-8 rounded-3xl border border-stone-200 dark:border-stone-700">
+                <div>
                   <h4 className="text-xl font-semibold text-stone-800 dark:text-stone-100 mb-4">
                     toast.success / error / loading
                   </h4>
@@ -400,7 +400,7 @@ toast.dismiss(loadingId);`}
                   />
                 </div>
 
-                <div className="bg-cream-50 dark:bg-stone-800 p-8 rounded-3xl border border-stone-200 dark:border-stone-700">
+                <div>
                   <h4 className="text-xl font-semibold text-stone-800 dark:text-stone-100 mb-4">
                     toast.promise
                   </h4>
@@ -460,7 +460,7 @@ toast.promise(saveUser(userData), {
           </div>
 
           <div className="grid gap-12">
-            <div className="bg-cream-25 dark:bg-stone-900 p-10 rounded-3xl shadow-sm border border-stone-200 dark:border-stone-700">
+            <div>
               <h3 className="text-3xl font-bold text-stone-800 dark:text-stone-100 mb-6">
                 Form Submission
               </h3>
@@ -480,7 +480,7 @@ toast.promise(saveUser(userData), {
               />
             </div>
 
-            <div className="bg-cream-25 dark:bg-stone-900 p-10 rounded-3xl shadow-sm border border-stone-200 dark:border-stone-700">
+            <div className="w-full break-words">
               <h3 className="text-3xl font-bold text-stone-800 dark:text-stone-100 mb-6">
                 File Upload
               </h3>
