@@ -1,6 +1,3 @@
-import { Route, Routes } from "react-router";
-import HomePage from "./components/HomePage";
-
 import { Toaster } from "planet-toast";
 import ToastDemo from "./components/ToastDoc";
 

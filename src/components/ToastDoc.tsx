@@ -106,14 +106,15 @@ const toast = {
   success: (message: string) => createToastElement(message, "success"),
   error: (message: string) => createToastElement(message, "error"),
   loading: (message: string) => createToastElement(message, "loading"),
-  dismiss: (id: string) => {
+  dismiss: (toastId: string) => {
+    console.log("Dismissing toast:", toastId); // Use the parameter
     const container = document.getElementById("toast-container");
     if (container && container.children.length > 0) {
       container.children[0]?.remove();
     }
   },
   promise: (promise: Promise<any>, messages: any) => {
-    const loadingId = createToastElement(messages.loading, "loading");
+    createToastElement(messages.loading, "loading");
     promise
       .then(() => createToastElement(messages.success, "success"))
       .catch(() => createToastElement(messages.error, "error"))
