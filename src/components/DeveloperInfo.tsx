@@ -55,26 +55,26 @@ const DeveloperInfo: React.FC = () => {
           {/* Stats */}
           <div className="grid grid-cols-3 gap-4 mt-8 pt-6 border-t border-stone-200">
             <div className="text-center">
-              <div className="text-5xl max-md:text-2xl font-bold text-amber-600">
+              <div className="text-2xl max-md:text-2xl font-bold text-amber-600">
                 50+
               </div>
-              <div className="text-xl text-stone-500 max-md:text-sm">
+              <div className="text-[17px] text-stone-500 max-md:text-sm">
                 Projects
               </div>
             </div>
             <div className="text-center">
-              <div className="text-5xl font-bold text-amber-600 max-md:text-2xl">
+              <div className="text-2xl font-bold text-amber-600 max-md:text-2xl">
                 5+
               </div>
-              <div className="text-xl text-stone-500 max-md:text-sm">
+              <div className="text-[17px] text-stone-500 max-md:text-sm">
                 Years Exp
               </div>
             </div>
             <div className="text-center">
-              <div className="text-5xl font-bold text-amber-60 max-md:text-2xl text-amber-600">
+              <div className="text-2xl font-bold text-amber-60 max-md:text-2xl text-amber-600">
                 1.2K
               </div>
-              <div className="text-xl max-md:text-sm text-stone-500">
+              <div className="text-[17px] max-md:text-sm text-stone-500">
                 GitHub Stars
               </div>
             </div>
