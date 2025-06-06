@@ -116,7 +116,20 @@ const toast = {
     const loadingId = createToastElement(messages.loading, "loading");
     promise
       .then(() => createToastElement(messages.success, "success"))
-      .catch(() => createToastElement(messages.error, "error"));
+      .catch(() => createToastElement(messages.error, "error"))
+      .finally(() => {
+        // Clean up loading toast
+        setTimeout(() => {
+          const container = document.getElementById("toast-container");
+          if (container) {
+            Array.from(container.children).forEach((child) => {
+              if (child.textContent?.includes(messages.loading)) {
+                child.remove();
+              }
+            });
+          }
+        }, 100);
+      });
   },
 };
 
@@ -127,13 +140,6 @@ Object.assign(toast, (message: string) =>
 
 const ToastDemo: React.FC = () => {
   const [darkMode, setDarkMode] = useState(false);
-  const [copiedCode, setCopiedCode] = useState<string | null>(null);
-
-  const copyToClipboard = (text: string, id: string) => {
-    navigator.clipboard.writeText(text);
-    setCopiedCode(id);
-    setTimeout(() => setCopiedCode(null), 2000);
-  };
 
   const demoToasts = () => {
     toast.success("Successfully created!");
@@ -142,46 +148,6 @@ const ToastDemo: React.FC = () => {
     setTimeout(() => {
       toast.success("All done! 🎉");
     }, 4000);
-  };
-
-  const syntaxHighlight = (code: string, language: string) => {
-    if (language === "bash") {
-      return code.replace(
-        /(npm|yarn|pnpm)\s+([^\s]+)/g,
-        '<span class="text-purple-300">$1</span> <span class="text-green-300">$2</span>'
-      );
-    }
-
-    // TypeScript/JavaScript syntax highlighting
-    return code
-      .replace(/\/\/.*$/gm, '<span class="text-gray-400">$&</span>') // Comments
-      .replace(/\/\*[\s\S]*?\*\//g, '<span class="text-gray-400">$&</span>') // Block comments
-      .replace(
-        /\b(import|export|from|as|default|const|let|var|function|async|await|return|if|else|for|while|class|extends|interface|type|enum)\b/g,
-        '<span class="text-pink-300">$1</span>'
-      ) // Keywords
-      .replace(
-        /\b(React|useState|useEffect|useCallback|useMemo|string|number|boolean|any|void|Promise|Array|Object)\b/g,
-        '<span class="text-cyan-300">$1</span>'
-      ) // Types/React
-      .replace(
-        /(['"`])((?:\\.|(?!\1)[^\\])*?)\1/g,
-        '<span class="text-yellow-300">$&</span>'
-      ) // Strings
-      .replace(/\b(\d+\.?\d*)\b/g, '<span class="text-purple-300">$1</span>') // Numbers
-      .replace(
-        /\b(true|false|null|undefined)\b/g,
-        '<span class="text-orange-300">$1</span>'
-      ) // Literals
-      .replace(
-        /([a-zA-Z_$][a-zA-Z0-9_$]*)\s*(?=\()/g,
-        '<span class="text-blue-300">$1</span>'
-      ) // Function calls
-      .replace(
-        /\.([a-zA-Z_$][a-zA-Z0-9_$]*)/g,
-        '.<span class="text-green-300">$1</span>'
-      ) // Properties
-      .replace(/\{|\}|\[|\]|\(|\)/g, '<span class="text-cyan-200">$&</span>'); // Brackets
   };
 
   const FeatureCard: React.FC<{
@@ -235,6 +201,12 @@ const ToastDemo: React.FC = () => {
                 ) : (
                   <Moon size={20} className="text-stone-600" />
                 )}
+              </button>
+              <button
+                onClick={demoToasts}
+                className="flex items-center gap-2 px-6 py-3 bg-amber-500 hover:bg-amber-600 text-white rounded-xl transition-colors font-medium">
+                <Sparkles size={20} />
+                Try Demo
               </button>
               <a
                 href="https://github.com/raiyanplanet/planet-toast"
@@ -325,14 +297,17 @@ function App() {
               </h3>
               <CodeBlock
                 language="tsx"
-                code={`import React from 'react';
-import { Toaster } from 'planet-toast';
+                code={`import { toast } from 'planet-toast';
 
-function App() {
+function MyComponent() {
+  const handleClick = () => {
+    toast.success('Hello World!');
+  };
+
   return (
-    <div className="text-gray-400">
-      {/* Your app content */}
-    </div>
+    <button onClick={handleClick}>
+      Show Toast
+    </button>
   );
 }`}
               />
