@@ -1,8 +1,5 @@
 import React, { useState } from "react";
 import {
-  ChevronRight,
-  Copy,
-  Check,
   Github,
   Package,
   Zap,
@@ -10,7 +7,6 @@ import {
   Code,
   Sparkles,
   Download,
-  ArrowRight,
   Sun,
   Moon,
 } from "lucide-react";
