@@ -22,14 +22,14 @@ const CodeBlock: React.FC<CodeBlockProps> = ({ code, language = "tsx" }) => {
   };
 
   return (
-    <div className="relative rounded-2xl overflow-hidden  dark:border-stone-700 text-wrap dark:bg-stone-900 bg-stone-950">
+    <div className="relative rounded-2xl overflow-hidden  dark:border-stone-700 text-wrap dark:bg-stone-800 bg-stone-900">
       <div className="flex items-center justify-between px-4 py-2 bg-stone-100 dark:bg-stone-700 border-b border-stone-300 dark:border-stone-600">
-        <span className="text-sm font-mono text-stone-600 dark:text-stone-300">
+        <span className="text-xl font-mono text-stone-600 dark:text-stone-300">
           {language}
         </span>
         <button
           onClick={handleCopy}
-          className="flex items-center gap-1 text-sm text-stone-500 hover:text-amber-600 dark:text-stone-400 dark:hover:text-amber-400 transition-colors">
+          className="flex items-center gap-1 text-xl text-stone-500 hover:text-amber-600 dark:text-stone-400 dark:hover:text-amber-400 transition-colors">
           {copied ? <Check size={16} /> : <Copy size={16} />}
           {copied ? "Copied!" : "Copy"}
         </button>
@@ -41,7 +41,7 @@ const CodeBlock: React.FC<CodeBlockProps> = ({ code, language = "tsx" }) => {
           margin: 0,
           padding: "1rem",
           background: "transparent",
-          fontSize: "0.875rem",
+
           fontFamily: "monospace",
           whiteSpace: "pre-wrap", // Allow wrapping
           wordBreak: "break-word", // Break long words if needed

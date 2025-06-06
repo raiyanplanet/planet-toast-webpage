@@ -5,11 +5,11 @@ const ApiRefaremce = () => {
     <>
       <section className="py-24 bg-cream-25 dark:bg-stone-900">
         <div className=" px-52 max-md:px-10 flex flex-col">
-          <div>
-            <h2 className="text-5xl font-bold text-stone-800 dark:text-stone-100 mb-6">
+          <div className=" text-center">
+            <h2 className="text-5xl max-md:text-3xl font-bold text-stone-800 dark:text-stone-100 mb-6">
               API Reference
             </h2>
-            <p className="text-xl text-stone-600 dark:text-stone-400">
+            <p className="text-xl text-stone-600 dark:text-stone-400 max-md:text-sm mb-5">
               Complete guide to all available methods and options
             </p>
           </div>
@@ -17,7 +17,7 @@ const ApiRefaremce = () => {
           <div className="space-y-16">
             {/* Basic Methods */}
             <div>
-              <h3 className="text-3xl font-bold text-stone-800 dark:text-stone-100 mb-8">
+              <h3 className="text-3xl font-bold text-stone-800 dark:text-stone-100 mb-8 max-md:text-xl">
                 Basic Methods
               </h3>
               <div className="flex flex-col space-y-10">
@@ -80,7 +80,7 @@ toast.promise(saveUser(userData), {
               <h3 className="text-3xl font-bold text-stone-800 dark:text-stone-100 mb-8">
                 Toaster Component
               </h3>
-              <div className="bg-cream-50 dark:bg-stone-800 p-8 rounded-3xl border border-stone-200 dark:border-stone-700">
+              <div>
                 <CodeBlock
                   code={`<Toaster
   position="top-center"      // Position: top/bottom + left/center/right

@@ -18,18 +18,20 @@ const DeveloperInfo: React.FC = () => {
         {/* Location */}
         <section>
           <div className=" flex items-start flex-col">
-            <h1 className="text-2xl font-bold  mb-1">Tawsiful Alam Raiyan</h1>
-            <p className="text-stone-900 flex items-center justify-center gap-1 dark:text-stone-100">
-              <Briefcase size={16} />
+            <h1 className="text-6xl mb-5 max-md:text-xl font-bold dark:text-amber-50">
+              Tawsiful Alam Raiyan
+            </h1>
+            <p className="text-stone-900 flex items-center justify-center gap-1 dark:text-stone-100 text-2xl max-md:text-sm">
+              <Briefcase />
               Full Stack Developer
             </p>
           </div>
-          <div className="flex items-start gap-2 dark:text-stone-300 mb-6">
-            <MapPin size={16} />
+          <div className="flex items-start gap-2 dark:text-stone-300 mb-6 text-2xl max-md:text-sm">
+            <MapPin />
             <span>Chattogram, Bangladesh</span>
           </div>
           {/* Bio */}
-          <p className="  dark:text-stone-300 mb-8 leading-relaxed">
+          <p className="  dark:text-stone-300 mb-8 leading-relaxed text-2xl max-md:text-sm">
             Passionate full-stack developer with 5+ years of experience building
             scalable web applications. Love creating beautiful user experiences
             and robust backend systems.
@@ -39,13 +41,13 @@ const DeveloperInfo: React.FC = () => {
           <div className="flex justify-center gap-4">
             <a
               href="https://github.com/raiyanplanet"
-              className="flex items-center gap-2 px-4 py-2 bg-stone-900 text-white rounded-xl hover:bg-stone-700 transition-colors font-medium">
+              className="flex items-center gap-2 text-2xl px-4 py-2 bg-stone-900 text-white rounded-xl hover:bg-stone-700 transition-colors font-medium max-md:text-sm">
               <Github size={18} />
               GitHub
             </a>
             <a
               href="https://x.com/raiyanplanet"
-              className="flex items-center gap-2 px-4 py-2 bg-blue-500 text-white rounded-xl hover:bg-blue-600 transition-colors font-medium">
+              className="flex items-center gap-2 px-4 py-2 bg-blue-500 text-white rounded-xl hover:bg-blue-600 text-2xl transition-colors font-medium max-md:text-sm">
               <Twitter size={18} />
               Twitter
             </a>
@@ -53,16 +55,28 @@ const DeveloperInfo: React.FC = () => {
           {/* Stats */}
           <div className="grid grid-cols-3 gap-4 mt-8 pt-6 border-t border-stone-200">
             <div className="text-center">
-              <div className="text-2xl font-bold text-amber-600">50+</div>
-              <div className="text-sm text-stone-500">Projects</div>
+              <div className="text-5xl max-md:text-2xl font-bold text-amber-600">
+                50+
+              </div>
+              <div className="text-xl text-stone-500 max-md:text-sm">
+                Projects
+              </div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-amber-600">5+</div>
-              <div className="text-sm text-stone-500">Years Exp</div>
+              <div className="text-5xl font-bold text-amber-600 max-md:text-2xl">
+                5+
+              </div>
+              <div className="text-xl text-stone-500 max-md:text-sm">
+                Years Exp
+              </div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-amber-600">1.2K</div>
-              <div className="text-sm text-stone-500">GitHub Stars</div>
+              <div className="text-5xl font-bold text-amber-60 max-md:text-2xl text-amber-600">
+                1.2K
+              </div>
+              <div className="text-xl max-md:text-sm text-stone-500">
+                GitHub Stars
+              </div>
             </div>
           </div>
         </section>

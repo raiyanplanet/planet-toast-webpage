@@ -150,14 +150,14 @@ const ToastDemo: React.FC = () => {
   }> = ({ icon, title, description }) => (
     <div className="bg-cream-50 dark:bg-stone-800 p-8 rounded-3xl shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 border border-stone-100 dark:border-stone-700">
       <div className="flex items-center gap-4 mb-6">
-        <div className="p-4 bg-gradient-to-br from-amber-200 to-orange-200 dark:from-amber-300 dark:to-orange-300 rounded-2xl text-amber-800 dark:text-amber-900">
+        <div className="p-4 max-sm:p-2 bg-gradient-to-br from-amber-200 to-orange-200 dark:from-amber-300 dark:to-orange-300 rounded-2xl text-amber-800 dark:text-amber-900">
           {icon}
         </div>
-        <h3 className="text-xl font-bold text-stone-800 dark:text-stone-100">
+        <h3 className="text-3xl max-md:text-xl font-bold text-stone-800 dark:text-stone-100">
           {title}
         </h3>
       </div>
-      <p className="text-stone-600 dark:text-stone-300 leading-relaxed">
+      <p className="text-stone-600 text-xl dark:text-stone-300 leading-relaxed">
         {description}
       </p>
     </div>
@@ -169,18 +169,18 @@ const ToastDemo: React.FC = () => {
         darkMode ? "dark bg-stone-900" : "bg-cream-25"
       }`}>
       {/* Header */}
-      <header className="sticky top-0 z-50 bg-amber-100/50 dark:bg-stone-900/90 backdrop-blur-md border-b border-stone-200 dark:border-stone-700">
-        <div className="max-w-7xl mx-auto px-6 py-4">
+      <header className="sticky top-0 z-50 bg-amber-100/50 dark:bg-stone-900/90 backdrop-blur-md border-b border-stone-200 dark:border-stone-700 px-5">
+        <div className="max-w-7xl mx-auto  py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-gradient-to-br from-amber-200 to-orange-200 dark:from-amber-300 dark:to-orange-300 rounded-xl flex items-center justify-center shadow-sm">
+              <div className="max-md:w-12 max-md:h-12 w-20 bg-gradient-to-br from-amber-200 to-orange-200 dark:from-amber-300 dark:to-orange-300 rounded-xl flex items-center justify-center shadow-sm">
                 <img src={logo} alt="" />
               </div>
               <div>
-                <h1 className="text-2xl max-md:text-xl font-bold text-stone-800 dark:text-stone-100">
+                <h1 className="text-3xl max-md:text-xl font-bold text-stone-800 dark:text-stone-100">
                   Planet Toast
                 </h1>
-                <p className="text-sm text-stone-600 dark:text-stone-400 max-md:hidden">
+                <p className="max-md:text-sm text-xl text-stone-600 dark:text-stone-400 max-md:hidden">
                   Beautiful toast notifications for React
                 </p>
               </div>
@@ -188,7 +188,7 @@ const ToastDemo: React.FC = () => {
             <div className="flex items-center gap-4">
               <button
                 onClick={() => setDarkMode(!darkMode)}
-                className="p-3 max-md:p-1.5 rounded-xl bg-stone-100 dark:bg-stone-800 hover:bg-stone-200 dark:hover:bg-stone-700 transition-colors border border-stone-200 dark:border-stone-600">
+                className="p-4 max-md:p-1.5 rounded-xl bg-stone-100 dark:bg-stone-800 hover:bg-stone-200 dark:hover:bg-stone-700 transition-colors border border-stone-200 dark:border-stone-600">
                 {darkMode ? (
                   <Sun size={20} className="text-amber-500" />
                 ) : (
@@ -198,13 +198,13 @@ const ToastDemo: React.FC = () => {
 
               <a
                 href="https://github.com/raiyanplanet/planet-toast"
-                className="flex items-center gap-2 px-6 py-3 max-md:px-2 max-md:py-2 bg-stone-800 dark:bg-amber-300 text-stone-100 dark:text-stone-800 rounded-xl hover:bg-stone-700 dark:hover:bg-stone-200 transition-colors font-medium">
+                className="flex items-center gap-2 px-6 py-3 max-md:px-2 max-md:py-2 bg-stone-800 dark:bg-amber-300 text-stone-100 dark:text-stone-800 rounded-xl hover:bg-stone-700 max-md:text-sm dark:hover:bg-stone-200 transition-colors text-xl font-medium">
                 <Github size={20} />
                 GitHub
               </a>
               <a
                 href="https://www.npmjs.com/package/planet-toast"
-                className="flex items-center gap-2 text-stone-400 hover:text-amber-300 transition-colors max-md:hidden">
+                className="flex items-center gap-2 text-stone-400 hover:text-amber-300 transition-colors text-xl max-md:hidden">
                 <Package size={20} />
                 npm
               </a>
@@ -222,22 +222,19 @@ const ToastDemo: React.FC = () => {
         className="py-24 bg-cream-25 dark:bg-stone-900">
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold text-stone-800 dark:text-stone-100 mb-6">
+            <h2 className="text-5xl font-bold text-stone-800 dark:text-stone-100 mb-6 max-md:text-3xl">
               Quick Start
             </h2>
-            <p className="text-xl text-stone-600 dark:text-stone-400">
+            <p className="text-xl text-stone-600 dark:text-stone-400 max-md:text-sm">
               Get up and running in less than 2 minutes
             </p>
           </div>
 
           <div className="space-y-12">
             <div>
-              <h3 className="text-3xl font-bold text-stone-800 dark:text-stone-100 mb-6 flex items-center gap-3">
+              <h3 className="text-3xl max-md:text-xl font-bold text-stone-800 dark:text-stone-100 mb-6 flex items-center gap-3">
                 <div className="p-2 bg-gradient-to-br from-amber-200 to-orange-200 dark:from-amber-300 dark:to-orange-300 rounded-xl">
-                  <Download
-                    className="text-amber-800 dark:text-amber-900"
-                    size={24}
-                  />
+                  <Download className="text-amber-800 dark:text-amber-900" />
                 </div>
                 Installation
               </h3>
@@ -308,10 +305,10 @@ function MyComponent() {
       <section className="py-24 bg-cream-50 dark:bg-stone-800">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-20">
-            <h2 className="text-5xl font-bold text-stone-800 dark:text-stone-100 mb-6">
+            <h2 className="text-5xl max-md:text-3xl font-bold text-stone-800 dark:text-stone-100 mb-6">
               Why Planet Toast?
             </h2>
-            <p className="text-xl text-stone-600 dark:text-stone-400">
+            <p className="text-xl max-md:text-sm text-stone-600 dark:text-stone-400">
               Everything you need for perfect toast notifications
             </p>
           </div>
@@ -355,10 +352,10 @@ function MyComponent() {
       <ApiRefaremce />
 
       {/* Examples */}
-      <section className="py-24 bg-cream-50 dark:bg-stone-800">
+      <section className="py-24 bg-cream-50 dark:bg-stone-950">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-20">
-            <h2 className="text-5xl font-bold text-stone-800 dark:text-stone-100 mb-6">
+            <h2 className="text-5xl max-md:text-3xl font-bold text-stone-800 dark:text-stone-100 mb-6">
               Examples
             </h2>
             <p className="text-xl text-stone-600 dark:text-stone-400">
@@ -422,14 +419,14 @@ function MyComponent() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="flex items-center gap-4 mb-6 md:mb-0">
-              <div className="w-12 h-12 bg-gradient-to-br from-amber-200 to-orange-200 rounded-2xl flex items-center justify-center shadow-sm">
+              <div className="max-md:w-12 w-20 bg-gradient-to-br from-amber-200 to-orange-200 rounded-2xl flex items-center justify-center shadow-sm">
                 <img src={logo} alt="" />
               </div>
               <div>
-                <h3 className="text-xl font-bold dark:text-stone-100">
+                <h3 className="max-md:text-xl text-5xl font-bold dark:text-stone-100">
                   Planet Toast
                 </h3>
-                <p className="dark:text-stone-400 text-sm">
+                <p className="dark:text-stone-400 max-md:text-sm text-xl">
                   Beautiful toast notifications for React
                 </p>
               </div>
@@ -437,19 +434,19 @@ function MyComponent() {
             <div className="flex items-center gap-8">
               <a
                 href="https://github.com/raiyanplanet/planet-toast"
-                className="flex items-center gap-2 dark:text-stone-400 hover:text-amber-300 transition-colors">
-                <Github size={20} />
+                className="flex items-center gap-2 dark:text-stone-400 hover:text-amber-300 transition-colors text-2xl max-md:text-xl">
+                <Github />
                 GitHub
               </a>
               <a
                 href="https://www.npmjs.com/package/planet-toast"
-                className="flex items-center gap-2 dark:text-stone-400 hover:text-amber-300 transition-colors">
-                <Package size={20} />
+                className="flex items-center gap-2 dark:text-stone-400 hover:text-amber-300 transition-colors text-2xl max-md:text-xl">
+                <Package />
                 npm
               </a>
             </div>
           </div>
-          <div className="border-t border-stone-700 mt-12 pt-8 text-center dark:text-stone-400">
+          <div className="border-t border-stone-700 mt-12 pt-8 text-center dark:text-stone-400 text-xl max-md:text-sm">
             <p>
               &copy; 2025 Planet Toast. Made with ❤️ for the React community.
             </p>
