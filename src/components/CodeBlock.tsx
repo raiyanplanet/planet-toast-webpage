@@ -22,7 +22,7 @@ const CodeBlock: React.FC<CodeBlockProps> = ({ code, language = "tsx" }) => {
   };
 
   return (
-    <div className="relative rounded-2xl overflow-hidden border border-stone-200 dark:border-stone-700 text-wrap bg-stone-900">
+    <div className="relative rounded-2xl overflow-hidden  dark:border-stone-700 text-wrap dark:bg-stone-900 bg-stone-950">
       <div className="flex items-center justify-between px-4 py-2 bg-stone-100 dark:bg-stone-700 border-b border-stone-300 dark:border-stone-600">
         <span className="text-sm font-mono text-stone-600 dark:text-stone-300">
           {language}

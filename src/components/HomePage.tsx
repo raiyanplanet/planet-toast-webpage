@@ -25,6 +25,7 @@ const HomePage = () => {
               <h1 className="text-5xl md:text-7xl font-bold mb-8 bg-gradient-to-r from-amber-800 via-orange-700 to-amber-600 dark:from-amber-200 dark:via-orange-200 dark:to-amber-300 bg-clip-text text-transparent">
                 Planet Toast
               </h1>
+
               <p className="text-xl md:text-2xl text-stone-700 dark:text-stone-300 mb-12 max-w-4xl mx-auto leading-relaxed">
                 The most beautiful and customizable toast notification library
                 for React applications. Zero dependencies, full TypeScript

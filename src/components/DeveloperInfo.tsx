@@ -5,7 +5,7 @@ import developer from "../../public/developer.png";
 const DeveloperInfo: React.FC = () => {
   return (
     <>
-      <div className=" w-full bg-cream-50 dark:bg-stone-800 rounded-3xl gap-6 shadow-xl p-8 border border-stone-700 flex max-md:flex-col">
+      <div className=" text-stone-900 w-full bg-cream-50 dark:bg-stone-800 rounded-3xl gap-6 shadow-xl p-8 flex max-md:flex-col">
         {/* Profile Image */}
         <section>
           <div className="text-center mb-6 flex gap-5 items-center justify-between">
@@ -19,17 +19,17 @@ const DeveloperInfo: React.FC = () => {
         <section>
           <div className=" flex items-start flex-col">
             <h1 className="text-2xl font-bold  mb-1">Tawsiful Alam Raiyan</h1>
-            <p className="text-stone-400 flex items-center justify-center gap-1">
+            <p className="text-stone-900 flex items-center justify-center gap-1 dark:text-stone-100">
               <Briefcase size={16} />
               Full Stack Developer
             </p>
           </div>
-          <div className="flex items-start gap-2 text-stone-300 mb-6">
+          <div className="flex items-start gap-2 dark:text-stone-300 mb-6">
             <MapPin size={16} />
             <span>Chattogram, Bangladesh</span>
           </div>
           {/* Bio */}
-          <p className=" text-stone-300 mb-8 leading-relaxed">
+          <p className="  dark:text-stone-300 mb-8 leading-relaxed">
             Passionate full-stack developer with 5+ years of experience building
             scalable web applications. Love creating beautiful user experiences
             and robust backend systems.

@@ -14,6 +14,7 @@ import CodeBlock from "./CodeBlock";
 import DeveloperInfo from "./DeveloperInfo";
 import logo from "../../public/logo.png";
 import HomePage from "./HomePage";
+import ApiRefaremce from "./ApiRefaremce";
 
 // Mock toast library implementation for demo purposes
 const createToastElement = (
@@ -168,15 +169,15 @@ const ToastDemo: React.FC = () => {
         darkMode ? "dark bg-stone-900" : "bg-cream-25"
       }`}>
       {/* Header */}
-      <header className="sticky top-0 z-50 bg-cream-25/90 dark:bg-stone-900/90 backdrop-blur-md border-b border-stone-200 dark:border-stone-700">
+      <header className="sticky top-0 z-50 bg-amber-100/50 dark:bg-stone-900/90 backdrop-blur-md border-b border-stone-200 dark:border-stone-700">
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-gradient-to-br from-amber-200 to-orange-200 dark:from-amber-300 dark:to-orange-300 rounded-2xl flex items-center justify-center shadow-sm">
+              <div className="w-12 h-12 bg-gradient-to-br from-amber-200 to-orange-200 dark:from-amber-300 dark:to-orange-300 rounded-xl flex items-center justify-center shadow-sm">
                 <img src={logo} alt="" />
               </div>
               <div>
-                <h1 className="text-xl font-bold text-stone-800 dark:text-stone-100">
+                <h1 className="text-2xl max-md:text-xl font-bold text-stone-800 dark:text-stone-100">
                   Planet Toast
                 </h1>
                 <p className="text-sm text-stone-600 dark:text-stone-400 max-md:hidden">
@@ -197,13 +198,13 @@ const ToastDemo: React.FC = () => {
 
               <a
                 href="https://github.com/raiyanplanet/planet-toast"
-                className="flex items-center gap-2 px-6 py-3 max-md:px-3 max-md:py-1.5 bg-stone-800 dark:bg-stone-100 text-stone-100 dark:text-stone-800 rounded-xl hover:bg-stone-700 dark:hover:bg-stone-200 transition-colors font-medium">
+                className="flex items-center gap-2 px-6 py-3 max-md:px-2 max-md:py-2 bg-stone-800 dark:bg-amber-300 text-stone-100 dark:text-stone-800 rounded-xl hover:bg-stone-700 dark:hover:bg-stone-200 transition-colors font-medium">
                 <Github size={20} />
                 GitHub
               </a>
               <a
                 href="https://www.npmjs.com/package/planet-toast"
-                className="flex items-center gap-2 text-stone-400 hover:text-amber-300 transition-colors">
+                className="flex items-center gap-2 text-stone-400 hover:text-amber-300 transition-colors max-md:hidden">
                 <Package size={20} />
                 npm
               </a>
@@ -351,101 +352,7 @@ function MyComponent() {
       </section>
 
       {/* API Reference */}
-      <section className="py-24 bg-cream-25 dark:bg-stone-900">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-20">
-            <h2 className="text-5xl font-bold text-stone-800 dark:text-stone-100 mb-6">
-              API Reference
-            </h2>
-            <p className="text-xl text-stone-600 dark:text-stone-400">
-              Complete guide to all available methods and options
-            </p>
-          </div>
-
-          <div className="space-y-16">
-            {/* Basic Methods */}
-            <div>
-              <h3 className="text-3xl font-bold text-stone-800 dark:text-stone-100 mb-8">
-                Basic Methods
-              </h3>
-              <div className="grid gap-8">
-                <div>
-                  <h4 className="text-xl font-semibold text-stone-800 dark:text-stone-100 mb-4">
-                    toast(message, options?)
-                  </h4>
-                  <CodeBlock
-                    code={`// Basic toast
-toast('Hello World!');
-
-// With options
-toast('Custom duration', { duration: 6000 });`}
-                  />
-                </div>
-
-                <div>
-                  <h4 className="text-xl font-semibold text-stone-800 dark:text-stone-100 mb-4">
-                    toast.success / error / loading
-                  </h4>
-                  <CodeBlock
-                    code={`// Success toast
-toast.success('Profile updated!');
-
-// Error toast
-toast.error('Failed to save');
-
-// Loading toast
-const loadingId = toast.loading('Uploading...');
-// Later dismiss it
-toast.dismiss(loadingId);`}
-                  />
-                </div>
-
-                <div>
-                  <h4 className="text-xl font-semibold text-stone-800 dark:text-stone-100 mb-4">
-                    toast.promise
-                  </h4>
-                  <CodeBlock
-                    code={`const saveUser = async (userData) => {
-  // Your async operation
-  return fetch('/api/users', { 
-    method: 'POST', 
-    body: JSON.stringify(userData) 
-  });
-};
-
-toast.promise(saveUser(userData), {
-  loading: 'Saving user...',
-  success: 'User saved successfully!',
-  error: 'Failed to save user'
-});`}
-                  />
-                </div>
-              </div>
-            </div>
-
-            {/* Toaster Component */}
-            <div>
-              <h3 className="text-3xl font-bold text-stone-800 dark:text-stone-100 mb-8">
-                Toaster Component
-              </h3>
-              <div className="bg-cream-50 dark:bg-stone-800 p-8 rounded-3xl border border-stone-200 dark:border-stone-700">
-                <CodeBlock
-                  code={`<Toaster
-  position="top-center"      // Position: top/bottom + left/center/right
-  reverseOrder={false}       // Reverse the order of toasts
-  gutter={8}                 // Gap between toasts
-  containerStyle={{}}        // Custom container styles
-  toastOptions={{            // Default options for all toasts
-    duration: 4000,
-    position: 'top-center'
-  }}
-/>`}
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ApiRefaremce />
 
       {/* Examples */}
       <section className="py-24 bg-cream-50 dark:bg-stone-800">
@@ -459,7 +366,7 @@ toast.promise(saveUser(userData), {
             </p>
           </div>
 
-          <div className="grid gap-12">
+          <div className="flex flex-col gap-10">
             <div>
               <h3 className="text-3xl font-bold text-stone-800 dark:text-stone-100 mb-6">
                 Form Submission
@@ -511,7 +418,7 @@ toast.promise(saveUser(userData), {
         <DeveloperInfo />
       </section>
       {/* Footer */}
-      <footer className="bg-stone-800 dark:bg-stone-900 text-stone-100 py-16">
+      <footer className="bg-stone-100 text-stone-900  dark:bg-stone-900 dark:text-stone-100 py-16">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="flex items-center gap-4 mb-6 md:mb-0">
@@ -519,10 +426,10 @@ toast.promise(saveUser(userData), {
                 <img src={logo} alt="" />
               </div>
               <div>
-                <h3 className="text-xl font-bold text-stone-100">
+                <h3 className="text-xl font-bold dark:text-stone-100">
                   Planet Toast
                 </h3>
-                <p className="text-stone-400 text-sm">
+                <p className="dark:text-stone-400 text-sm">
                   Beautiful toast notifications for React
                 </p>
               </div>
@@ -530,19 +437,19 @@ toast.promise(saveUser(userData), {
             <div className="flex items-center gap-8">
               <a
                 href="https://github.com/raiyanplanet/planet-toast"
-                className="flex items-center gap-2 text-stone-400 hover:text-amber-300 transition-colors">
+                className="flex items-center gap-2 dark:text-stone-400 hover:text-amber-300 transition-colors">
                 <Github size={20} />
                 GitHub
               </a>
               <a
                 href="https://www.npmjs.com/package/planet-toast"
-                className="flex items-center gap-2 text-stone-400 hover:text-amber-300 transition-colors">
+                className="flex items-center gap-2 dark:text-stone-400 hover:text-amber-300 transition-colors">
                 <Package size={20} />
                 npm
               </a>
             </div>
           </div>
-          <div className="border-t border-stone-700 mt-12 pt-8 text-center text-stone-400">
+          <div className="border-t border-stone-700 mt-12 pt-8 text-center dark:text-stone-400">
             <p>
               &copy; 2025 Planet Toast. Made with ❤️ for the React community.
             </p>
