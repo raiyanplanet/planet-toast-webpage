@@ -1,10 +1,7 @@
 import { Download, Sparkles } from "lucide-react";
+import { toast } from "planet-toast";
 
 const HomePage = () => {
-  function demoToasts(): void {
-    throw new Error("Function not implemented.");
-  }
-
   return (
     <>
       <main>
@@ -35,7 +32,7 @@ const HomePage = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <button
-                  onClick={demoToasts}
+                  onClick={() => toast.success("🥰 Welcome to planet toast")}
                   className="px-8 py-4 bg-gradient-to-r from-amber-400 to-orange-400 text-amber-900 rounded-2xl font-semibold hover:from-amber-500 hover:to-orange-500 transition-all duration-300 hover:scale-105 shadow-lg flex items-center justify-center gap-2">
                   <Sparkles size={20} />
                   Try Live Demo

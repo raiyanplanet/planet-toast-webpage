@@ -142,15 +142,6 @@ Object.assign(toast, (message: string) =>
 const ToastDemo: React.FC = () => {
   const [darkMode, setDarkMode] = useState(false);
 
-  const demoToasts = () => {
-    toast.success("Successfully created!");
-    setTimeout(() => toast.error("Something went wrong"), 1000);
-    setTimeout(() => toast.loading("Processing..."), 2000);
-    setTimeout(() => {
-      toast.success("All done! 🎉");
-    }, 4000);
-  };
-
   const FeatureCard: React.FC<{
     icon: React.ReactNode;
     title: string;
@@ -203,12 +194,7 @@ const ToastDemo: React.FC = () => {
                   <Moon size={20} className="text-stone-600" />
                 )}
               </button>
-              <button
-                onClick={demoToasts}
-                className="flex items-center gap-2 px-6 py-3 bg-amber-500 hover:bg-amber-600 text-white rounded-xl transition-colors font-medium">
-                <Sparkles size={20} />
-                Try Demo
-              </button>
+
               <a
                 href="https://github.com/raiyanplanet/planet-toast"
                 className="flex items-center gap-2 px-6 py-3 bg-stone-800 dark:bg-stone-100 text-stone-100 dark:text-stone-800 rounded-xl hover:bg-stone-700 dark:hover:bg-stone-200 transition-colors font-medium">

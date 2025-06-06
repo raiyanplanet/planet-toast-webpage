@@ -7,7 +7,7 @@ const App = () => {
       <main>
         <ToastDemo />
         <Toaster
-          position="top-right"
+          position="top-center"
           reverseOrder={false}
           gutter={8}
           containerStyle={{}}
