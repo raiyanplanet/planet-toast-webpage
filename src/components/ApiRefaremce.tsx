@@ -6,7 +6,7 @@ const ApiRefaremce = () => {
       <section className="py-24 bg-cream-25 dark:bg-stone-900">
         <div className=" px-52 max-md:px-10 flex flex-col">
           <div className=" text-center">
-            <h2 className="text-5xl max-md:text-3xl font-bold text-stone-800 dark:text-stone-100 mb-6">
+            <h2 className="text-3xl max-md:text-3xl font-bold text-stone-800 dark:text-stone-100 mb-6">
               API Reference
             </h2>
             <p className="text-xl text-stone-600 dark:text-stone-400 max-md:text-sm mb-5">

@@ -10,7 +10,7 @@ const DeveloperInfo: React.FC = () => {
         <section>
           <div className="text-center mb-6 flex gap-5 items-center justify-between">
             <div className=" max-md:w-xl mx-auto mb-4 bg-gradient-to-br from-amber-200 to-orange-200 rounded-full flex items-center justify-center shadow-lg overflow-hidden border-2 border-stone-700">
-              <img src={developer} alt="" width={700} className="max-md:w-xl" />
+              <img src={developer} alt="" width={200} className="max-md:w-xl" />
             </div>
           </div>
         </section>
@@ -18,20 +18,20 @@ const DeveloperInfo: React.FC = () => {
         {/* Location */}
         <section>
           <div className=" flex items-start flex-col">
-            <h1 className="text-6xl mb-5 max-md:text-xl font-bold dark:text-amber-50">
+            <h1 className="text-2xl mb-5 max-md:text-xl font-bold dark:text-amber-50">
               Tawsiful Alam Raiyan
             </h1>
-            <p className="text-stone-900 flex items-center justify-center gap-1 dark:text-stone-100 text-2xl max-md:text-sm">
+            <p className="text-stone-900 flex items-center justify-center gap-1 dark:text-stone-100  text-[15px]  max-md:text-sm">
               <Briefcase />
               Full Stack Developer
             </p>
           </div>
-          <div className="flex items-start gap-2 dark:text-stone-300 mb-6 text-2xl max-md:text-sm">
+          <div className="flex items-start gap-2 dark:text-stone-300 mb-6  text-[15px] max-md:text-sm">
             <MapPin />
             <span>Chattogram, Bangladesh</span>
           </div>
           {/* Bio */}
-          <p className="  dark:text-stone-300 mb-8 leading-relaxed text-2xl max-md:text-sm">
+          <p className="  dark:text-stone-300 mb-8 leading-relaxed text-[15px] max-md:text-sm">
             Passionate full-stack developer with 5+ years of experience building
             scalable web applications. Love creating beautiful user experiences
             and robust backend systems.
@@ -41,13 +41,13 @@ const DeveloperInfo: React.FC = () => {
           <div className="flex justify-center gap-4">
             <a
               href="https://github.com/raiyanplanet"
-              className="flex items-center gap-2 text-2xl px-4 py-2 bg-stone-900 text-white rounded-xl hover:bg-stone-700 transition-colors font-medium max-md:text-sm">
+              className="flex items-center gap-2 text-[17px] px-4 py-2 bg-stone-900 text-white rounded-xl hover:bg-stone-700 transition-colors font-medium max-md:text-sm">
               <Github size={18} />
               GitHub
             </a>
             <a
               href="https://x.com/raiyanplanet"
-              className="flex items-center gap-2 px-4 py-2 bg-blue-500 text-white rounded-xl hover:bg-blue-600 text-2xl transition-colors font-medium max-md:text-sm">
+              className="flex items-center gap-2 px-4 py-2 bg-blue-500 text-white rounded-xl hover:bg-blue-600 text-[17px] transition-colors font-medium max-md:text-sm">
               <Twitter size={18} />
               Twitter
             </a>
