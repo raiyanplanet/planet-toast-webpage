@@ -176,7 +176,7 @@ const ToastDemo: React.FC = () => {
                 <img src={logo} alt="" />
               </div>
               <div>
-                <h1 className="text-2xl font-bold text-stone-800 dark:text-stone-100">
+                <h1 className="text-xl font-bold text-stone-800 dark:text-stone-100">
                   Planet Toast
                 </h1>
                 <p className="text-sm text-stone-600 dark:text-stone-400 max-md:hidden">
