@@ -19,21 +19,6 @@ const DeveloperInfo: React.FC = () => {
     },
   };
 
-  const leftsection: Variants = {
-    offscreen: {
-      scaleX: 0,
-    },
-    onscreen: {
-      scale: 1,
-
-      transition: {
-        type: "spring",
-        bounce: 0.01,
-        duration: 0.8,
-      },
-    },
-  };
-
   return (
     <>
       <div className=" text-stone-900 w-full bg-cream-50 dark:bg-stone-800 rounded-3xl gap-6 shadow-xl p-8 flex max-md:flex-col">
