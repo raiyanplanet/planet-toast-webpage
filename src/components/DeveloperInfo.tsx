@@ -1,23 +1,63 @@
 import React from "react";
 import { Github, Twitter, MapPin, Briefcase } from "lucide-react";
 import developer from "../../public/developer.png";
+import { motion, type Variants } from "motion/react";
 
 const DeveloperInfo: React.FC = () => {
+  const cardVariants: Variants = {
+    offscreen: {
+      translateX: -100,
+    },
+    onscreen: {
+      translateX: 0,
+
+      transition: {
+        type: "spring",
+        bounce: 0.001,
+        duration: 0.8,
+      },
+    },
+  };
+
+  const leftsection: Variants = {
+    offscreen: {
+      translateX: 100,
+    },
+    onscreen: {
+      translateX: 0,
+
+      transition: {
+        type: "spring",
+        bounce: 0.01,
+        duration: 0.8,
+      },
+    },
+  };
+
   return (
     <>
       <div className=" text-stone-900 w-full bg-cream-50 dark:bg-stone-800 rounded-3xl gap-6 shadow-xl p-8 flex max-md:flex-col">
         {/* Profile Image */}
         <section>
           <div className="text-center mb-6 flex gap-5 items-center justify-between">
-            <div className=" max-md:w-xl mx-auto mb-4 bg-gradient-to-br from-amber-200 to-orange-200 rounded-full flex items-center justify-center shadow-lg overflow-hidden border-2 border-stone-700">
+            <motion.div
+              variants={cardVariants}
+              initial="offscreen"
+              whileInView="onscreen"
+              viewport={{ amount: 0.4 }}
+              className=" max-md:w-xl mx-auto mb-4 bg-gradient-to-br from-amber-200 to-orange-200 rounded-full flex items-center justify-center shadow-lg overflow-hidden border-2 border-stone-700">
               <img src={developer} alt="" width={200} className="max-md:w-xl" />
-            </div>
+            </motion.div>
           </div>
         </section>
 
         {/* Location */}
-        <section>
-          <div className=" flex items-start flex-col">
+        <motion.section
+          variants={leftsection}
+          initial="offscreen"
+          whileInView="onscreen"
+          viewport={{ amount: 0.4 }}>
+          <motion.div className=" flex items-start flex-col">
             <h1 className="text-2xl mb-5 max-md:text-xl font-bold dark:text-amber-50">
               Tawsiful Alam Raiyan
             </h1>
@@ -25,7 +65,7 @@ const DeveloperInfo: React.FC = () => {
               <Briefcase />
               Full Stack Developer
             </p>
-          </div>
+          </motion.div>
           <div className="flex items-start gap-2 dark:text-stone-300 mb-6  text-[15px] max-md:text-sm">
             <MapPin />
             <span>Chattogram, Bangladesh</span>
@@ -79,7 +119,7 @@ const DeveloperInfo: React.FC = () => {
               </div>
             </div>
           </div>
-        </section>
+        </motion.section>
       </div>
     </>
   );

@@ -16,6 +16,8 @@ import logo from "../../public/logo.png";
 import HomePage from "./HomePage";
 import ApiRefaremce from "./ApiRefaremce";
 
+import Footer from "./Footer";
+
 // Mock toast library implementation for demo purposes
 const createToastElement = (
   message: string,
@@ -188,7 +190,7 @@ const ToastDemo: React.FC = () => {
             <div className="flex items-center gap-4">
               <button
                 onClick={() => setDarkMode(!darkMode)}
-                className="p-4 max-md:p-1.5 rounded-xl bg-stone-100 dark:bg-stone-800 hover:bg-stone-200 dark:hover:bg-stone-700 transition-colors border border-stone-200 dark:border-stone-600">
+                className="p-4 max-md:p-1.5 max-md:hidden rounded-xl bg-stone-100 dark:bg-stone-800 hover:bg-stone-200 dark:hover:bg-stone-700 transition-colors border border-stone-200 dark:border-stone-600">
                 {darkMode ? (
                   <Sun size={20} className="text-amber-500" />
                 ) : (
@@ -415,44 +417,7 @@ function MyComponent() {
         <DeveloperInfo />
       </section>
       {/* Footer */}
-      <footer className="bg-stone-100 text-stone-900  dark:bg-stone-900 dark:text-stone-100 py-16">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row items-center justify-between">
-            <div className="flex items-center gap-4 mb-6 md:mb-0">
-              <div className="max-md:w-12 w-20 bg-gradient-to-br from-amber-200 to-orange-200 rounded-2xl flex items-center justify-center shadow-sm">
-                <img src={logo} alt="" />
-              </div>
-              <div>
-                <h3 className="max-md:text-xl text-5xl font-bold dark:text-stone-100">
-                  Planet Toast
-                </h3>
-                <p className="dark:text-stone-400 max-md:text-sm text-xl">
-                  Beautiful toast notifications for React
-                </p>
-              </div>
-            </div>
-            <div className="flex items-center gap-8">
-              <a
-                href="https://github.com/raiyanplanet/planet-toast"
-                className="flex items-center gap-2 dark:text-stone-400 hover:text-amber-300 transition-colors text-2xl max-md:text-xl">
-                <Github />
-                GitHub
-              </a>
-              <a
-                href="https://www.npmjs.com/package/planet-toast"
-                className="flex items-center gap-2 dark:text-stone-400 hover:text-amber-300 transition-colors text-2xl max-md:text-xl">
-                <Package />
-                npm
-              </a>
-            </div>
-          </div>
-          <div className="border-t border-stone-700 mt-12 pt-8 text-center dark:text-stone-400 text-xl max-md:text-sm">
-            <p>
-              &copy; 2025 Planet Toast. Made with ❤️ for the React community.
-            </p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { dracula } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import { Copy, Check } from "lucide-react"; // Optional: lucide icons
+import { motion, type Variants } from "motion/react";
 
 type CodeBlockProps = {
   code: string;
@@ -21,9 +22,29 @@ const CodeBlock: React.FC<CodeBlockProps> = ({ code, language = "tsx" }) => {
     }
   };
 
+  const cardVariants: Variants = {
+    offscreen: {
+      translateX: -100,
+    },
+    onscreen: {
+      translateX: 0,
+
+      transition: {
+        type: "spring",
+        bounce: 0.001,
+        duration: 0.8,
+      },
+    },
+  };
+
   return (
-    <div className="relative rounded-2xl overflow-hidden  dark:border-stone-700 text-wrap dark:bg-stone-800 bg-stone-900">
-      <div className="flex items-center justify-between px-4 py-2 bg-stone-100 dark:bg-stone-700 border-b border-stone-300 dark:border-stone-600">
+    <motion.div
+      variants={cardVariants}
+      initial="offscreen"
+      whileInView="onscreen"
+      viewport={{ amount: 0.4 }}
+      className="relative rounded-2xl overflow-hidden  dark:border-stone-700 text-wrap dark:bg-stone-800 bg-stone-900">
+      <motion.div className="flex items-center justify-between px-4 py-2 bg-stone-100 dark:bg-stone-700 border-b border-stone-300 dark:border-stone-600">
         <span className="text-xl font-mono text-stone-600 dark:text-stone-300">
           {language}
         </span>
@@ -33,7 +54,7 @@ const CodeBlock: React.FC<CodeBlockProps> = ({ code, language = "tsx" }) => {
           {copied ? <Check size={16} /> : <Copy size={16} />}
           {copied ? "Copied!" : "Copy"}
         </button>
-      </div>
+      </motion.div>
       <SyntaxHighlighter
         language={language}
         style={dracula}
@@ -49,7 +70,7 @@ const CodeBlock: React.FC<CodeBlockProps> = ({ code, language = "tsx" }) => {
         }}>
         {code}
       </SyntaxHighlighter>
-    </div>
+    </motion.div>
   );
 };
 
