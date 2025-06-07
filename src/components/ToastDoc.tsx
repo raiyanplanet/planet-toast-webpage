@@ -17,6 +17,7 @@ import HomePage from "./HomePage";
 import ApiRefaremce from "./ApiRefaremce";
 
 import Footer from "./Footer";
+import { motion, type Variants } from "motion/react";
 
 // Mock toast library implementation for demo purposes
 const createToastElement = (
@@ -150,7 +151,12 @@ const ToastDemo: React.FC = () => {
     title: string;
     description: string;
   }> = ({ icon, title, description }) => (
-    <div className="bg-cream-50 dark:bg-stone-800 p-8 rounded-3xl shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 border border-stone-100 dark:border-stone-700">
+    <motion.div
+      variants={leftsection}
+      initial="offscreen"
+      whileInView="onscreen"
+      viewport={{ amount: 0.4 }}
+      className="bg-cream-50 dark:bg-stone-800 p-8 rounded-3xl shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 border border-stone-100 dark:border-stone-700">
       <div className="flex items-center gap-4 mb-6">
         <div className="p-2 max-sm:p-2 bg-gradient-to-br from-amber-200 to-orange-200 dark:from-amber-300 dark:to-orange-300 rounded-2xl text-amber-800 dark:text-amber-900">
           {icon}
@@ -162,8 +168,23 @@ const ToastDemo: React.FC = () => {
       <p className="text-stone-600 text-[17px] dark:text-stone-300 leading-relaxed">
         {description}
       </p>
-    </div>
+    </motion.div>
   );
+
+  const leftsection: Variants = {
+    offscreen: {
+      scale: 0,
+    },
+    onscreen: {
+      scale: 1,
+
+      transition: {
+        type: "spring",
+        delay: 0.00001,
+        duration: 0.1,
+      },
+    },
+  };
 
   return (
     <div

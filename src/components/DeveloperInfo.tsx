@@ -6,10 +6,10 @@ import { motion, type Variants } from "motion/react";
 const DeveloperInfo: React.FC = () => {
   const cardVariants: Variants = {
     offscreen: {
-      translateX: -100,
+      scale: 0,
     },
     onscreen: {
-      translateX: 0,
+      scale: 1,
 
       transition: {
         type: "spring",
@@ -21,10 +21,10 @@ const DeveloperInfo: React.FC = () => {
 
   const leftsection: Variants = {
     offscreen: {
-      translateX: 100,
+      scaleX: 0,
     },
     onscreen: {
-      translateX: 0,
+      scale: 1,
 
       transition: {
         type: "spring",
@@ -52,11 +52,7 @@ const DeveloperInfo: React.FC = () => {
         </section>
 
         {/* Location */}
-        <motion.section
-          variants={leftsection}
-          initial="offscreen"
-          whileInView="onscreen"
-          viewport={{ amount: 0.4 }}>
+        <motion.section>
           <motion.div className=" flex items-start flex-col">
             <h1 className="text-2xl mb-5 max-md:text-xl font-bold dark:text-amber-50">
               Tawsiful Alam Raiyan

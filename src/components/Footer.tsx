@@ -5,10 +5,10 @@ import { Github, Package } from "lucide-react";
 const Footer = () => {
   const leftsection: Variants = {
     offscreen: {
-      translateX: 100,
+      scale: 0,
     },
     onscreen: {
-      translateX: 0,
+      scale: 1,
 
       transition: {
         type: "spring",

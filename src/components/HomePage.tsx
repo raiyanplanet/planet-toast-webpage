@@ -20,10 +20,10 @@ const HomePage = () => {
 
   const trybtn: Variants = {
     offscreen: {
-      translateX: -100,
+      scale: 0,
     },
     onscreen: {
-      translateX: 0,
+      scale: 1,
 
       transition: {
         type: "spring",
@@ -35,10 +35,10 @@ const HomePage = () => {
 
   const docbtn: Variants = {
     offscreen: {
-      translateX: 100,
+      scale: 0,
     },
     onscreen: {
-      translateX: 0,
+      scale: 1,
 
       transition: {
         type: "spring",
